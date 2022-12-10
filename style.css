@@ -1,114 +1,101 @@
-/*CSS Reset*/
-*{
-  margin:0px;
-  padding:0px;
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
 }
-body{
-  /*Hides the  bottom scrollbar*/
+
+body {
+  font-family: "Muli", sans-serif;
+  background-color: steelblue;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   overflow: hidden;
+  margin: 0;
 }
-/*Styling of the Game's Name*/
-#gameName{
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container a {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: lightblue;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.text {
+  margin-top: 30px;
+}
+
+.form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 300px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.form-control label {
   position: absolute;
-  left: 24vw;
-  background-color: white;
-  font-weight: bold;
-  font-size: 4rem;
-
-}
-/*Background image styling*/
-.container{
-  background-image: url(./images/cover.png);
-  background-size:cover;
-  width:100vw;
-  height:100vh;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
 }
 
-.design {
-  position:absolute;
-  top: 109px;
-  right: 57px;
-
-  background-color: black;
-  padding: 10px;
-  border-radius: 20px;
-  color: white;
-  font-weight: bold;
+.form-control label span {
+  display: inline-block;
+  font-size: 18px;
+  min-width: 5px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/*ScoreCard Styling*/
-#scorecount{
-  position:absolute;
-  top:20px;
-  right:20px;
-  background-color: black;
-  padding: 28px;
-  border-radius: 20px;
-  color: white;
-}
-/*Obstacle image styling and postioning*/
-.obstacle{
-  background-image: url(./images/obstacle.png);
-  background-size: cover;
-  width:154px;
-  height: 117px;
-  position:absolute;
-  bottom:0px;
-  right:120px;
-}
-/*Applying aniamation to the obstacle so that it can move towards left*/
-.animateobstacle{
-  animation: aniob 5s linear infinite;
-}
-@keyframes aniob{
-  0%{
-      left:100vw;
-  }
-  100%{
-      left:-10vw;
-  }
-}
-/*Dragon's styling*/
-.dragon{
-  background-image: url(./images/dragon.png);
-  background-size: cover;
-  width: 194px;
-  height: 101px;
-  position:absolute;
-  bottom:0px;
-  left:90px;
-}
-/*Applying animation to the dragon so that it can save himself by jumping up*/
-.animatedragon{
-  animation: ani 1s linear;
-}
-@keyframes ani{
-  0%{
-      bottom:0px;
-  }
-  25%{
-      bottom:150px;
-  }
-  50%{
-      bottom:300px;
-  }
-  75%{
-      bottom:211px;
-  }
-  100%{
-      bottom:0px;
-  }
-}
-/*gameover styling and positioning*/
-.gameover{
-  visibility: hidden;
-  font-family: 'Ubuntu', sans-serif;
-  position:absolute;
-  top:50vh;
-  left:35vw;
-  color:red;
-  font-weight:bold;
-  font-size: 6rem;
-  background-color: firebrick;
-  border-radius: 20px;
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;
+  transform: translateY(-30px);
 }
